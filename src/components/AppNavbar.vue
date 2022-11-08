@@ -8,7 +8,7 @@
       <b-navbar-brand class="navbar-brand" href=""
         >HYPERBIZZ</b-navbar-brand
       >
-
+    
       <b-navbar-toggle
         class="navbar-toggler"
         target="nav-collapse"
@@ -38,7 +38,10 @@
 
          </div>
       </b-collapse>
+
+      <div><input type="search" placeholder="search brands or items" class="lg-none searchBox"></div>
     </b-navbar>
+    
   </div>
 </template>
 
@@ -80,11 +83,22 @@ export default {
   background-color: #d9d9d9;
   
 }
-input{
+.search-box{
   margin-left: 10em;
 }
-
+.lg-none{
+  display: none;
+}
+@media(max-width:400px){
+  .lg-none{
+    display: block;
+  }
+  .searchBox{
+    margin-top: 10px;
+  }
+}
 @media (max-width:1000px){
+
 
 .sm-none{
   display: none;
