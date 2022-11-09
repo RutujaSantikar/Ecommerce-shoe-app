@@ -55,11 +55,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .body{
-  width:90%;
+  width:100%;
   margin: 0 auto;
+ 
+
 }
 .navbar{
   background-color:white  !important;
+  width: 90%;
+  margin: 0 auto;
 }
 .navbar-brand{
   font-family: 'Anton', sans-serif;
