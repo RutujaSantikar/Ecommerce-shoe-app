@@ -48,7 +48,7 @@ data(){
   font-weight:200;
   font-family:'Anton', sans-serif;
   letter-spacing: 0.3em;
-  width: 35%;
+  width: 30%;
   
 }
 .shopbtn:hover{

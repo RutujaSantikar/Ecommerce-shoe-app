@@ -5,7 +5,7 @@
       toggleable="lg"
       variant="info"
     >
-      <b-navbar-brand class="navbar-brand" href=""
+      <b-navbar-brand class="navbar-brand" href="/home"
         >HYPERBIZZ</b-navbar-brand
       >
     
@@ -32,9 +32,9 @@
 
         <!-- Right aligned nav items -->
          <div class="align-right">
-          <button class="btn btn-signup  ">Sign up</button>
+          <button class="btn btn-signup"><router-link to="/signup">Sign up</router-link></button>
           
-          <button class="btn btn-signin  ">Sign in</button>
+          <button class="btn btn-signin"><router-link to="/signin">Sign in</router-link></button>
 
          </div>
       </b-collapse>
@@ -89,6 +89,13 @@ export default {
 .lg-none{
   display: none;
 }
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color:black;
+}
 @media(max-width:400px){
   .lg-none{
     display: block;
@@ -107,6 +114,7 @@ export default {
 .align-right{
   margin-left: 1em;
 }
+
 
 }
 </style>
