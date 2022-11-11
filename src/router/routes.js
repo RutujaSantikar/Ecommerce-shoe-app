@@ -22,7 +22,7 @@ const router = new Router({
     },
     {
        name:"shoedetails",
-       path:'/shoedetails',
+       path:'/shoedetails/:id',
        component:ShoeDetails
     },
     {

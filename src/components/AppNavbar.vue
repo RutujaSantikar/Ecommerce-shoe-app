@@ -16,8 +16,7 @@
         
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item class="nav-link " href="/#"
-            > <input type="search " placeholder="search brands or items" class="search-box sm-none"></b-nav-item>
+          
 
           <b-nav-item class="nav-link  " href="/#"
             ><i class="fa-solid fa-user"></i></b-nav-item
@@ -70,10 +69,10 @@ export default {
   font-size: 25px;
 }
 .align-right{
-  margin-left: 10em;
+  margin-left: 20em;
 }
 .nav-link{
-  margin: 0px 5px 0px 5px;
+  margin: 0px 20px 0px 20px;
 }
 .navbar-toggler{
   font-size: 14px;
@@ -87,9 +86,7 @@ export default {
   background-color: #d9d9d9;
   
 }
-.search-box{
-  margin-left: 10em;
-}
+
 .lg-none{
   display: none;
 }
@@ -100,20 +97,9 @@ a{
 a:hover{
   color:black;
 }
-@media(max-width:400px){
-  .lg-none{
-    display: block;
-  }
-  .searchBox{
-    margin-top: 10px;
-  }
-}
+
 @media (max-width:1000px){
 
-
-.sm-none{
-  display: none;
-}
 
 .align-right{
   margin-left: 1em;

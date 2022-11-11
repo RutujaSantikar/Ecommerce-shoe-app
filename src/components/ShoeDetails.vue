@@ -4,10 +4,10 @@
             <div class="img-cont"><img v-bind:src="shoe"></div>
             <div class="details-cont">
                 <div class="shoe-info">
-                    <div class="brandname"><h4>Brand Name</h4></div>
-                    <div class="shoe-name">Shoe Name</div>
-                    <div class="shoe-price">Price</div>
-                    <div class="shoe-color">Color</div>
+                    <div class="brandname"><h4>{{ apiData.brandName }}</h4></div>
+                    <div class="shoe-name">{{ apiData.name }}</div>
+                    <div class="shoe-price"> {{ apiData.price.current.text }} </div>
+                    <div class="shoe-color"> {{ apiData.colour }}</div>
                      <div class="shoe-color"><label for="cars">Size</label><br>
                     <select name="size" id="size">
                         <option value="six">6</option>
@@ -16,7 +16,7 @@
                         <option value="nine">9</option>
                         <option value="ten">10</option>
                     </select></div>
-                    <div class="shoe-code">Shoe Code</div>
+                    <div class="shoe-code"> Code:{{ apiData.productCode }}</div>
                      <div class="shoe-add-btn"><button class="add-btn">ADD TO BAG</button></div>
 
 
@@ -28,13 +28,36 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name:"ShoeDetails",
 
     data(){
         return{
-            shoe:require("../assets/shoe2.jpg")
+            apiData:[],
+            shoe:require("../assets/shoe1.webp")
         }
+    },
+
+    mounted(){
+        
+
+const options = {
+  method: 'GET',
+  url: 'https://asos2.p.rapidapi.com/products/v3/detail',
+  params: {id:this.$route.params.id },
+  headers: {
+    'X-RapidAPI-Key': 'a7d6170542msh95535dd546dd907p1d8c25jsn568bff2c8d3f',
+    'X-RapidAPI-Host': 'asos2.p.rapidapi.com'
+  }
+};
+
+axios.request(options).then( (response) => {
+	console.log(response.data);
+    this.apiData = response.data
+}).catch(function (error) {
+	console.error(error);
+});
     }
 
 }
