@@ -2,16 +2,16 @@
 
 
   <div class="body">
-     <div class="search-product"><input type="search " placeholder="search brands or items" class="search-box sm-none"></div>
+     <div class="search-product"><input type="text "  v-model = "search" placeholder="search brands or items" class="search-box sm-none"></div>
 
     
     <div class="shoe-list-container">
       
-     <div class="shoe-card" v-for= "productinfo in apiData" :key= "productinfo.id"  @click="productdetail(productinfo.id)">
+     <div class="shoe-card" v-for= "product in  filteredItems" :key= "product.id"  @click="productdetail(product.id)">
       <div class="shoe-img "><img :src= "img1" /></div>
-      <div class="brandname"><h5>{{ productinfo.brandName}}</h5></div>
-      <div class="brand-name title-text">{{ productinfo.name }}</div>
-      <div class="shoe-price title-text"> {{ productinfo.price.current.text }}</div>
+      <div class="brandname"><h5>{{ product.brandName}}</h5></div>
+      <div class="brand-name title-text">{{ product.name }}</div>
+      <div class="shoe-price title-text"> {{ product.price.current.text }}</div>
      </div>
      
 
@@ -27,6 +27,7 @@ export default {
   data(){
     return{
       apiData:[],
+      search:"",
    
      
      img1:require("../assets/shoe1.webp")
@@ -65,6 +66,14 @@ axios.request(options).then((response) => {
 }).catch(function (error) {
 	console.error(error);
 });
+  },
+
+  computed:{
+    filteredItems: function(){
+      return this.apiData.filter((product) => {
+        return product.brandName.toLowerCase().match(this.search.toLowerCase());
+      })
+    }
   }
 }
 </script>
@@ -87,6 +96,9 @@ input{
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap:15px;
+}
+.shoe-card:hover{
+  border:1px solid gray;
 }
 img{
   width: 100%;

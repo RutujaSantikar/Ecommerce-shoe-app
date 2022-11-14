@@ -17,7 +17,7 @@
                         <option value="ten">10</option>
                     </select></div>
                     <div class="shoe-code"> Code:{{ apiData.productCode }}</div>
-                     <div class="shoe-add-btn"><button class="add-btn">ADD TO BAG</button></div>
+                     <div class="shoe-add-btn"><button class="add-btn">ADD TO CART</button></div>
 
 
                 </div>

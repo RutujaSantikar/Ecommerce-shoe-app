@@ -25,7 +25,7 @@
             ><i class="fa-solid fa-heart"></i></b-nav-item
           >
           <b-nav-item class="nav-link  " href="/#"
-            ><i class="fa-solid fa-bag-shopping"></i></b-nav-item
+            ><i class="fa-solid fa-cart-shopping"></i></b-nav-item
           >
         </b-navbar-nav>
 
