@@ -77,6 +77,7 @@ export default {
 .navbar-toggler{
   font-size: 14px;
   color: #d9d9d9;
+  margin-left: 2em;
 }
 .btn{
  margin: 0px 5px 0px 5px;

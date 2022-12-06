@@ -8,7 +8,7 @@
       <div class="right-part">
        <div class="signup-form">
         
-      <form @submit.prevent="onSubmit">
+      <div>
         <div class="input">
           <label for="email">Email</label>
           <div><input
@@ -32,9 +32,9 @@
                   v-model="confirmPassword"></div>
         </div>
         <div class="submit">
-          <button type="submit" class="signup-btn">Signup</button>
+          <button @click = "authenticate" type="submit" class="signup-btn">Signup</button>
         </div>
-      </form>
+      </div>
        <p class="newuser">Already a customer ? <router-link to="/signin">Signin</router-link></p>
        </div>
        
@@ -48,7 +48,22 @@
 
 <script>
 export default {
-name:"UserSignup"
+name:"UserSignup",
+data(){
+  return{
+    email:'',
+    password:'',
+    confmpassword:''
+  }
+},
+mathods:{
+  authenticate(){
+
+  },
+  signup(){
+    
+  }
+}
 }
 </script>
 
